@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+  padding:24px 20px 0;
+}
+.container {
+  position: relative;
+  width: 100%; 
+}
+* {
+  box-sizing: border-box;
+}
+
+.row > .column {
+  padding: 0 8px 18px;
+}
+
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.container .btn {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 20px 40px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+.container .btn:hover {
+  background-color: black;
+}
+</style>
+<body style="background-image: url('background.jpg');" class="container"> 
+
+<h2 style="text-align:center">Victoria Memorial</h2>
+<p>According to historian Durba Ghosh, Viceroy of India Lord Curzon's "plans for the historical museum that became the Victoria Memorial Hall predated Victoria's death in 1901. When he addressed a group at the Asiatic Society, he admitted that he had always planned to build such a historical museum. The queen's death had provided an appropriate occasion to monumentalize the empire."[2]<br><br>
+
+After Victoria's death on 22 January 1901, Curzon wrote to Lord George Hamilton, the Secretary of State for India on 24 January, noting the "importance of Victoria's matriarchy to promoting loyalist feeling."[3] He proposed the construction of a grand building with a museum and gardens.[4] Curzon said on 26 February 1901 in his address to the Asiatic Society,
+
+"Let us, therefore, have a building, stately, spacious, monumental and grand, to which every newcomer in Calcutta will turn, to which all the resident population, European and Native, will flock, where all classes will learn the lessons of history and see revived before their eyes the marvels of the past; and where father shall say to son and mother and daughter — ‘This Statue and this great Hall were erected in memory of the greatest and best Sovereign whom India has ever known. She lived far away over the seas, but her heart was with her subjects in India, both of her own race, and of all others. She loved them both the same. In her time, and before it, great men lived, and great deeds were done. Here are their memorials. This is her monument.’[5]<br><br>
+
+The government officials, princes, politicians, and people of India responded generously to Lord Curzon's appeal for funds, and the total cost of construction of the monument, amounting to one crore, five lakhs of Rupees, was entirely derived from their voluntary subscriptions.[6][5]<br><br>
+
+
+
+</p>    
+
+<div class="row" >
+  <div class="column">
+    <img src="vic1.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="vic2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="vic1.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="vic2.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+</div>
+
+<p>The site chosen was near the present-day Raj Bhawan, known at the time as Government House. The construction of the Victoria Memorial was delayed by Curzon's departure from India in 1905, with a subsequent loss of local enthusiasm for the project. There was also some uncertainty about the strength of the foundations, and tests on them were carried out.[7] On 4 January 1906, George, the Prince of Wales laid the foundation stone.[8]
+
+The work of construction was entrusted to Messrs. Martin & Co. of Calcutta, and work on the superstructure began in 1910.[8] In 1911, before construction was finished, George V, the Emperor of India, announced the transfer of the capital of India from Calcutta to New Delhi.[9] Thus, the Victoria Memorial would come to stand in what would be a major provincial capital, rather than the national capital. The Victoria Memorial was completed and formally opened to the public in December 1921 by the Prince of Wales, the future Edward VIII.[7][8][10]
+
+After 1947, some additions were made to the Memorial.</p>
+
+<br><br><br>
+<a href="index.html"><button class="btn">Back to home page</button></a><br><br><br><br>
+
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <img src="vic1.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <img src="vic2.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <img src="vic1.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <img src="vic2.jpg" style="width:100%">
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+
+    <div class="column">
+      <img class="demo cursor" src="vic1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Victoria Memorial">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="vic2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Victoria Memorial">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="vic1.jpg" style="width:100%" onclick="currentSlide(3)" alt="Victoria Memorial">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="vic2.jpg" style="width:100%" onclick="currentSlide(4)" alt="Victoria Memorial">
+    </div>
+  </div>
+</div>
+
+<script>
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+    
+</body>
+</html>
